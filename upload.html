@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image - Chicken Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        select, input[type="file"] {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            font-size: 16px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .upload-section {
+            margin-bottom: 30px;
+        }
+
+        .model-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upload Chicken Image</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="model-section">
+                    <label for="model">Choose a model:</label>
+                    <select name="model" id="model" required>
+                        <option value="VGG16">VGG16</option>
+                        <option value="MobileNetV3">MobileNetV3</option>
+                        <option value="EfficientNetB5">EfficientNetB5</option>
+                    </select>
+                </div>
+
+                <div class="upload-section">
+                    <label for="file">Upload Chicken Disease Image:</label>
+                    <input type="file" name="file" id="file" accept="image/*" required>
+                </div>
+
+                <button type="submit">Upload and Predict</button>
+            </form>
+
+            <a href="/">Go back to Home</a>
+        </div>
+    </main>
+</body>
+</html>
